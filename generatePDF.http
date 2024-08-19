@@ -1,6 +1,6 @@
 @generatePDF_HostAddress = http://localhost:5124
 
-GET {{generatePDF_HostAddress}}/weatherforecast/
+GET {{generatePDF_HostAddress}}/pdf/
 Accept: application/json
 
 ###

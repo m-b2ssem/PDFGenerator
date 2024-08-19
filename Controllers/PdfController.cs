@@ -10,12 +10,20 @@ namespace generatePDF.Controllers
     [ApiController]
     public class PdfController : ControllerBase
     {
-        [HttpPost]
+        [HttpGet]
         [Route("generate")]
         public  IActionResult GeneratePdf([FromBody] PersonScanRequestResponse requestResponse)
         {
+            Console.WriteLine("New request");
             string base64Str =  HelperPersonScanReport.GeneratePdfPersonScanResult(requestResponse.PersonScanRequest, requestResponse.PersonScanResponse);
             return Ok(base64Str);
+        }
+
+        [HttpGet]
+        [Route("test")]
+
+        public IActionResult Test() { 
+            return Ok("hello word");
         }
     }
 }
